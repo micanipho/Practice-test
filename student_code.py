@@ -187,6 +187,10 @@ def sum_numbers_until_zero(nums: list):
     return total
 
 def count_positive_numbers(nums: list):
+    total = 0
+    for i in range(len(nums)):
+        if nums[i] > 0:
+            total += 1
     """
     Count the number of positive integers in a list.
 
@@ -197,6 +201,7 @@ def count_positive_numbers(nums: list):
     int: The count of positive integers in the list.
     """
     pass
+    return total
 
 def sum_dictionary_values(dictionary: dict):
     """
@@ -223,6 +228,12 @@ def sum_unique_elements(elements: list):
     pass
 
 def skip_divisible_by_num(n: int, length: int):
+    num_list = []
+    for i in range(length):
+        if i % 2 == 0:
+            continue
+        else:
+            num_list.append(i)
     """
     Generate a list of numbers from 1 to length, skipping those that are divisible by a specific number.
 
@@ -234,10 +245,12 @@ def skip_divisible_by_num(n: int, length: int):
     list: A list of integers from 1 to length, excluding those divisible by n.
     """
     pass
+    return num_list
 
 """Learning Outcome: Processing Data"""
 
 def square_numbers(nums: list):
+    nums_list = [num * num for num in nums]
     """
     Calculate the square of each number in a list.
 
@@ -248,6 +261,7 @@ def square_numbers(nums: list):
     list: A list containing the squares of the input integers.
     """
     pass
+    return nums_list
 
 def transform_string(input: str, transform: str):
     """
@@ -276,6 +290,7 @@ def sum_and_average(nums: list[int]):
     tuple: A tuple containing the sum and average of the numbers.
     """
     pass
+    return (sum(nums), (sum(nums)/len(nums)))
 
 def word_frequency_count(words: list[str]):
     """
@@ -290,6 +305,8 @@ def word_frequency_count(words: list[str]):
     pass
 
 def filter_even_numbers(nums: list[int]):
+
+    nums_list = [num for num in nums if num % 2 == 0]
     """
     Filter out even numbers from a list.
 
@@ -300,6 +317,7 @@ def filter_even_numbers(nums: list[int]):
     list: A list containing only the even integers from the input list.
     """
     pass
+    return nums_list
 
 """Learning Outcome: Simple Algorithms(Problem Solving)"""
 
@@ -329,8 +347,14 @@ def reverse_string(input: str):
     str: The reversed string.
     """
     pass
+    return input[::-1]
 
 def largest_number(nums: list[int]):
+    if len(nums) == 0:
+        return None
+    else:
+        nums = sorted(nums)
+        largest_number = nums[-1]
     """
     Find the largest number in a list.
 
@@ -341,8 +365,16 @@ def largest_number(nums: list[int]):
     int or None: The largest number in the list, or None if the list is empty.
     """
     pass
-
+    return largest_number
 def is_prime(n: int):
+    factors = []
+    for i in range(n/2):
+        if n % i == 0:
+            factors.append(i)
+    if len(factors) == 1:
+        return True
+    else:
+        return False
     """
     Check if a number is prime.
 
@@ -355,6 +387,13 @@ def is_prime(n: int):
     pass
 
 def count_character_occurrences(word_sentence: str, char_count: str):
+
+    char_counter = 0
+    word_sentence_list = " ".split(word_sentence)
+
+    for el in word_sentence_list:
+        if el == char_count:
+            char_counter += 1
     """
     Count the occurrences of a character in a given sentence.
 
@@ -366,3 +405,4 @@ def count_character_occurrences(word_sentence: str, char_count: str):
     int: The number of occurrences of the character in the sentence.
     """
     pass
+    return char_counter
