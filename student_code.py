@@ -284,9 +284,18 @@ def skip_divisible_by_num(n: int, length: int):
     Returns:
     list: A list of integers from 1 to length, excluding those divisible by n.
     """
-    pass
+    num_list = []
+    for i in range(1, length + 1):
+        if i % n == 0:
+            continue
+        else:
+            num_list.append(i)
+    return num_list
+
+# print(skip_divisible_by_num(3, 16))
 
 """Learning Outcome: Processing Data"""
+
 
 def square_numbers(nums: list):
     """
@@ -298,7 +307,17 @@ def square_numbers(nums: list):
     Returns:
     list: A list containing the squares of the input integers.
     """
-    pass
+    squared_numbers = []
+
+    for i in list_of_square_num:
+        square_num = i * i
+        squared_numbers.append(square_num)
+
+    return squared_numbers
+
+list_of_square_num = [1, 2, 3, 4, 5]
+
+square_numbers(list_of_square_num)
 
 def transform_string(input: str, transform: str):
     """
@@ -367,7 +386,17 @@ def filter_even_numbers(nums: list[int]):
     Returns:
     list: A list containing only the even integers from the input list.
     """
-    pass
+    even_nums = []
+
+    for i in filtering_nums:
+        if i % 2 == 0:
+            even_nums.append(i)
+
+    return even_nums
+
+filtering_nums = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+filter_even_numbers(filtering_nums)
 
 """Learning Outcome: Simple Algorithms(Problem Solving)"""
 
@@ -402,7 +431,7 @@ def reverse_string(input: str):
     """
     return reverse_string_input[::-1]
 
-reverse_string_input = input("Enter a string: ")
+reverse_string_input = "qwerty"
 
 reverse_string(reverse_string_input)
 
@@ -438,7 +467,13 @@ def is_prime(n: int):
     Returns:
     bool: True if the number is prime, False otherwise.
     """
-    pass
+    for i in range(2, n):
+        if i % n == 0:
+            return False
+        else:
+            return True
+    
+is_prime(7)
 
 def count_character_occurrences(word_sentence: str, char_count: str):
     """
