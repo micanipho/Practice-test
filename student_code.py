@@ -12,7 +12,11 @@ def sum_of_squares(n: int):
     Raises:
     ValueError: If n is a negative integer.
     """
-    pass
+    for n in range(1, n + 1):
+        sum = (n ** 2) 
+    print(sum)
+print(sum_of_squares(3))
+
 
 def evaluate_performance(grades: list, min_pass: int):
     """
@@ -25,7 +29,17 @@ def evaluate_performance(grades: list, min_pass: int):
     Returns:
     str: "Pass" if the average grade is greater than or equal to min_pass, otherwise "Fail".
     """
-    pass
+    grades =[80, 70, 90]
+    min_grade_passing = 75
+
+    for num in grades:
+        grade += num 
+    average = grade // len(grades)
+
+    if average < min_grade_passing: 
+        print("Fail")
+    else: 
+        print("Pass")
 
 def calculate_cumulative_performance(scores: dict):
     """
@@ -37,7 +51,10 @@ def calculate_cumulative_performance(scores: dict):
     Returns:
     dict: A dictionary containing the average score and a list of subjects where the score is below average.
     """
-    pass
+    scores = {"Math": 65, "English": 85, "Science": 50}
+
+    
+    
 
 def analyze_improvement(scores: list):
     """
@@ -75,7 +92,17 @@ def even_numbers(n: int):
     Returns:
     list: A list of even integers from 1 to n.
     """
-    pass
+    even_numbers = []
+
+    for i in range(1, n):
+        if i % 2 == 0: 
+            even_numbers.append(i)
+    return even_numbers
+print(even_numbers(20))
+
+
+
+    
 
 def odd_numbers(n: int):
     """
@@ -87,7 +114,13 @@ def odd_numbers(n: int):
     Returns:
     list: A list of odd integers from 1 to n.
     """
-    pass
+    odd_numbers = []
+
+    for i in range(1,n):
+        if i % 2 != 0:
+            odd_numbers.append(i)
+            return odd_numbers
+print(odd_numbers(20))
 
 def sum_multiples_of_num(num: int, length: int):
     """
