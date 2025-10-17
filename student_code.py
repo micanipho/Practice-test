@@ -49,28 +49,16 @@ def calculate_cumulative_performance(scores: dict):
     dict: A dictionary containing the average score and a list of subjects where the score is below average.
     """
     
-    results = []
-    subjects = []
+    if not scores:
+        return {"average": 0, "below_average": []}
     
+    total_score = sum(scores.values())
+    average_score = round((total_score / len(scores)), 2)
     
-    for keys, values in scores.items():
-        results.append(values)
-        subjects.append(keys)
+    below_average_score = [subject for subject, score in scores.items() if score < average_score]
     
-    average = sum(results) / len(results)
+    return {"average": average_score, "below_average": below_average_score}
     
-    
-    dict = {}
-    dict["average"] = f"{int(average):.2f}"
-    
-    for ave, sub in zip(results, subjects):
-        if ave < average:
-            if dict["below_average"]:
-                dict["below_average"].append(sub)
-            elif not dict["below_average"]:
-                dict["below_average"] = [sub]
-            
-    return dict
 print(calculate_cumulative_performance({"Math": 65, "English": 85, "Science": 50}))
 
 def analyze_improvement(scores: list):
@@ -287,7 +275,7 @@ def filter_even_numbers(nums: list[int]):
     Returns:
     list: A list containing only the even integers from the input list.
     """
-    pass
+    pass 
 
 """Learning Outcome: Simple Algorithms(Problem Solving)"""
 
