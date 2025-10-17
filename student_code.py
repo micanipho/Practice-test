@@ -226,6 +226,11 @@ def skip_divisible_by_num(n: int, length: int):
 """Learning Outcome: Processing Data"""
 
 def square_numbers(nums: list):
+    nums = []
+    squared = []
+    for num in nums:
+        num = num * num
+        return squared.append(num)
     """
     Calculate the square of each number in a list.
 
@@ -238,6 +243,7 @@ def square_numbers(nums: list):
     pass
 
 def transform_string(input: str, transform: str):
+    
     """
     Transform a string based on the specified transformation type.
 
@@ -254,6 +260,9 @@ def transform_string(input: str, transform: str):
     pass
 
 def sum_and_average(nums: list[int]):
+    nums = []
+    sum_and_average(nums)
+    return sum_and_average
 
     """
     Calculate the sum and average of a list of numbers.
@@ -284,6 +293,12 @@ def word_frequency_count(words: list[str]):
     pass
 
 def filter_even_numbers(nums: list[int]):
+    nums = []
+    even_integers = []
+    for num in nums:
+        if num % 2 == 0:
+            even_integers.append(num)
+            return even_integers
     """
     Filter out even numbers from a list.
 
@@ -298,6 +313,10 @@ def filter_even_numbers(nums: list[int]):
 """Learning Outcome: Simple Algorithms(Problem Solving)"""
 
 def find_median(nums: list[int]):
+    nums = []
+    median = sum(nums) / 2
+    return median
+
     """
     Find the median of a list of numbers.
 
@@ -313,6 +332,7 @@ def find_median(nums: list[int]):
     pass
 
 def reverse_string(input: str):
+    
     return reverse_string[::-1]
     """
     Reverse the given string.
@@ -357,6 +377,12 @@ def is_prime(n: int):
     pass
 
 def count_character_occurrences(word_sentence: str, char_count: str):
+    word_sentence = ""
+    char_count = 0
+
+    for char in word_sentence:
+        char_count += 1
+        return char_count
     """
     Count the occurrences of a character in a given sentence.
 
