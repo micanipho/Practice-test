@@ -12,7 +12,13 @@ def sum_of_squares(n: int):
     Raises:
     ValueError: If n is a negative integer.
     """
-    pass
+    try:
+        sum = 0
+        for i in range(1, n + 1):
+            sum += i **2
+        return sum
+    except ValueError:
+        return f"Enter a postive number"
 
 def evaluate_performance(grades: list, min_pass: int):
     """
@@ -25,7 +31,15 @@ def evaluate_performance(grades: list, min_pass: int):
     Returns:
     str: "Pass" if the average grade is greater than or equal to min_pass, otherwise "Fail".
     """
-    pass
+    count = 0
+
+    for i in grades:
+        count += i
+    
+    if count/len(grades) >= min_pass:
+        return f"pass"
+    else:
+        return f"fail"
 
 def calculate_cumulative_performance(scores: dict):
     """
@@ -37,7 +51,20 @@ def calculate_cumulative_performance(scores: dict):
     Returns:
     dict: A dictionary containing the average score and a list of subjects where the score is below average.
     """
-    pass
+    average_score = 0
+    my_dict = {}
+    list_below_average = []
+    for x, y in scores.items():
+        average_score += y
+    average_score = average_score/len(scores)
+
+    for x, y in scores.items():
+        if y < average_score:
+            list_below_average.append(x)
+
+    my_dict[average_score] = list_below_average
+
+    return my_dict
 
 def analyze_improvement(scores: list):
     """
