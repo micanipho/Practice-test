@@ -1,5 +1,11 @@
 """Learning Outcome: Functions"""
 def sum_of_squares(n: int):
+    if num <= 0:
+        raise ValueError("Number cannot be a negative integer")
+    sum = 0
+    for num in range (1, n + 1):
+        sum += num * num
+        return sum
     """
     Calculate the sum of the squares of all integers from 1 to n.
 
@@ -12,9 +18,21 @@ def sum_of_squares(n: int):
     Raises:
     ValueError: If n is a negative integer.
     """
+    
     pass
 
 def evaluate_performance(grades: list, min_pass: int):
+    min_pass = 75
+    grades = []
+
+    for grade in grades:
+        if grade >= min_pass:
+            return "Pass"
+        else:
+            return "Fail"
+        
+
+
     """
     Evaluate the performance based on a list of grades and a minimum passing grade.
 
@@ -28,6 +46,11 @@ def evaluate_performance(grades: list, min_pass: int):
     pass
 
 def calculate_cumulative_performance(scores: dict):
+    average = sum[scores]/ len[scores]
+
+
+
+
     """
     Calculate the cumulative performance based on student scores.
 
@@ -66,6 +89,12 @@ def rank_students(students: list[tuple[str, int]]):
 
 """Learning Outcome: Basic Loops"""
 def even_numbers(n: int):
+    evens = []
+    for num in range (1, n+1):
+        if num % 2 == 0:
+            evens.append(num)
+            return evens
+
     """
     Generate a list of even numbers from 1 to n.
 
@@ -78,6 +107,11 @@ def even_numbers(n: int):
     pass
 
 def odd_numbers(n: int):
+    odds= []
+    for num in range (1, n+1):
+        if num % 2 != 0:
+            odds.append(num)
+            return odds
     """
     Generate a list of odd numbers from 1 to n.
 
@@ -220,6 +254,7 @@ def transform_string(input: str, transform: str):
     pass
 
 def sum_and_average(nums: list[int]):
+
     """
     Calculate the sum and average of a list of numbers.
 
@@ -232,6 +267,11 @@ def sum_and_average(nums: list[int]):
     pass
 
 def word_frequency_count(words: list[str]):
+    words = []
+    word_count = 0
+
+    for w in words:
+        word_count += 1
     """
     Count the frequency of each word in a list.
 
@@ -273,6 +313,7 @@ def find_median(nums: list[int]):
     pass
 
 def reverse_string(input: str):
+    return reverse_string[::-1]
     """
     Reverse the given string.
 
@@ -285,6 +326,8 @@ def reverse_string(input: str):
     pass
 
 def largest_number(nums: list[int]):
+    nums = []
+    
     """
     Find the largest number in a list.
 
@@ -297,6 +340,11 @@ def largest_number(nums: list[int]):
     pass
 
 def is_prime(n: int):
+    for num in range(n):
+        if num // num == 1 and num // 1 == num:
+            return True
+        else:
+            return False
     """
     Check if a number is prime.
 
