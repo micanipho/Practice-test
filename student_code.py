@@ -12,8 +12,13 @@ def sum_of_squares(n: int):
     Raises:
     ValueError: If n is a negative integer.
     """
-    pass
+    sumnum = []
+    for i in range(1, n +1):
+        i = pow(i,2)
+        sumnum.append(i)
+    return (sum(sumnum))
 
+sum_of_squares(5)
 def evaluate_performance(grades: list, min_pass: int):
     """
     Evaluate the performance based on a list of grades and a minimum passing grade.
@@ -25,7 +30,13 @@ def evaluate_performance(grades: list, min_pass: int):
     Returns:
     str: "Pass" if the average grade is greater than or equal to min_pass, otherwise "Fail".
     """
-    pass
+    dict = {}
+    for i in grades:
+        if i >= min_pass:
+            return f"{i} Pass"
+        else:
+            return f"{i} Fail"
+print(evaluate_performance([100, 70, 90, 75, 65], 75))
 
 def calculate_cumulative_performance(scores: dict):
     """
@@ -37,7 +48,11 @@ def calculate_cumulative_performance(scores: dict):
     Returns:
     dict: A dictionary containing the average score and a list of subjects where the score is below average.
     """
-    pass
+    lis = []
+    for i in scores.values():
+        lis.append(i)
+        return sum(lis)/len(lis)
+print(calculate_cumulative_performance({"Math": 65, "English": 85, "Science": 50}))   
 
 def analyze_improvement(scores: list):
     """
@@ -50,7 +65,22 @@ def analyze_improvement(scores: list):
     dict: A dictionary containing the trend of improvement ("positive", "negative", or "neutral") 
           and a boolean indicating whether there has been an improvement.
     """
-    pass
+    dictionary = {}
+    positve = False
+    negative = False
+    neutral = False
+    for i in scores:
+        if i > 0:
+            positve = True
+            return positve
+        elif i < 0:
+            negative = True
+            return negative
+        elif i == 0:
+            neutral = True
+            return neutral
+
+
 
 def rank_students(students: list[tuple[str, int]]):
     """
@@ -75,7 +105,12 @@ def even_numbers(n: int):
     Returns:
     list: A list of even integers from 1 to n.
     """
-    pass
+    even = []
+    for i in range(1,n+1):
+        if i % 2 == 0:
+            even.append(i)
+    return even
+print(even_numbers(10))
 
 def odd_numbers(n: int):
     """
@@ -87,8 +122,12 @@ def odd_numbers(n: int):
     Returns:
     list: A list of odd integers from 1 to n.
     """
-    pass
-
+    odd = []
+    for i in range(1,n+1):
+        if i % 2 != 0:
+            odd.append(i)
+    return odd
+print(odd_numbers(10))
 def sum_multiples_of_num(num: int, length: int):
     """
     Calculate the sum of multiples of a given number up to a specified length.
@@ -100,7 +139,12 @@ def sum_multiples_of_num(num: int, length: int):
     Returns:
     int: The sum of multiples of num from 1 to length.
     """
-    pass
+    lis = []
+    for i in range(num):
+        if num % i== 0:
+            lis.append(num)
+        return lis
+print(sum_multiples_of_num(9,2))
 
 def skip_num(n: int, length: int):
     """
