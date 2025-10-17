@@ -60,14 +60,15 @@ def sum_numbers_until_zero(nums: list):
     """
     pass
 
-    
+    list = []    
 
     for i in nums:
         if i == 0:
             break
-            sum(nums)
         else:
-            return sum(nums)
+            list.append(i)
+    
+    return sum(list)
 
 nums = [1, 2, 3, 4, 0, 5, 6, 7]
         

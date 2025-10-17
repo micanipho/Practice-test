@@ -167,18 +167,22 @@ print(skip_num(2, 10))
 # =================================================================================
 
 def sum_numbers_until_zero(nums: list):
-    """
-    Calculate the sum of numbers in a list until a zero is encountered.
-
-    Parameters:
-    nums (list): A list of integers.
-
-    Returns:
-    int: The sum of integers in the list up to (but not including) the first zero.
-    """
-    pass
-
     
+    list = []    
+
+    for i in nums:
+        if i == 0:
+            break
+        else:
+            list.append(i)
+    
+    return sum(list)
+
+nums = [1, 2, 3, 4, 0, 5, 6, 7]
+        
+print(sum_numbers_until_zero(nums))
+
+
 
 # =================================================================================
 # Q2
