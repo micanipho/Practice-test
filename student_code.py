@@ -1,5 +1,11 @@
 """Learning Outcome: Functions"""
 def sum_of_squares(n: int):
+    if n < 0:
+        return ValueError
+    total += 0
+    for i in range(n):
+        total += i ** 2
+
     """
     Calculate the sum of the squares of all integers from 1 to n.
 
@@ -13,8 +19,15 @@ def sum_of_squares(n: int):
     ValueError: If n is a negative integer.
     """
     pass
+    return total
 
 def evaluate_performance(grades: list, min_pass: int):
+
+    for grade in grades:
+        if grade >= min_pass:
+            return "Pass" 
+        else:
+            return "False"
     """
     Evaluate the performance based on a list of grades and a minimum passing grade.
 
@@ -53,6 +66,7 @@ def analyze_improvement(scores: list):
     pass
 
 def rank_students(students: list[tuple[str, int]]):
+
     """
     Rank students based on their scores.
 
@@ -66,6 +80,10 @@ def rank_students(students: list[tuple[str, int]]):
 
 """Learning Outcome: Basic Loops"""
 def even_numbers(n: int):
+    even_numbers = []
+    for i in range(n):
+        if i % 2 == 0:
+            even_numbers.append(i)
     """
     Generate a list of even numbers from 1 to n.
 
@@ -76,8 +94,14 @@ def even_numbers(n: int):
     list: A list of even integers from 1 to n.
     """
     pass
+    return even_numbers
 
 def odd_numbers(n: int):
+
+    odd_numbers =  []
+    for i in range(n):
+        if i % 2 != 0:
+            odd_numbers.append(i)
     """
     Generate a list of odd numbers from 1 to n.
 
@@ -88,7 +112,7 @@ def odd_numbers(n: int):
     list: A list of odd integers from 1 to n.
     """
     pass
-
+    return odd_numbers
 def sum_multiples_of_num(num: int, length: int):
     """
     Calculate the sum of multiples of a given number up to a specified length.
@@ -103,6 +127,14 @@ def sum_multiples_of_num(num: int, length: int):
     pass
 
 def skip_num(n: int, length: int):
+
+    num_list = []
+    for i in range(length):
+        if i == n:
+            continue
+        else:
+            num_list.append(i)
+
     """
     Generate a list of numbers from 1 to length, skipping a specific number.
 
@@ -114,8 +146,15 @@ def skip_num(n: int, length: int):
     list: A list of integers from 1 to length, excluding n.
     """
     pass
+    return num_list
 
 def break_test(n: int, length: int):
+    num_list = []
+    for i in range(length):
+        if i == n:
+            break
+        else:
+            num_list.append(i)
     """
     Generate a list of numbers from 1 to length, stopping when a specific number is encountered.
 
@@ -129,6 +168,12 @@ def break_test(n: int, length: int):
     pass
 
 def sum_numbers_until_zero(nums: list):
+    total = 0
+    for i in range(len(nums)):
+        if nums[i] != 0:
+            total += nums[i]
+        else:
+            continue
     """
     Calculate the sum of numbers in a list until a zero is encountered.
 
@@ -139,6 +184,7 @@ def sum_numbers_until_zero(nums: list):
     int: The sum of integers in the list up to (but not including) the first zero.
     """
     pass
+    return total
 
 def count_positive_numbers(nums: list):
     """
