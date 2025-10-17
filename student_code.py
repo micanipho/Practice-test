@@ -18,7 +18,6 @@ def sum_of_squares(n: int):
     Raises:
     ValueError: If n is a negative integer.
     """
-    pass
     return total
 
 def evaluate_performance(grades: list, min_pass: int):
@@ -38,8 +37,6 @@ def evaluate_performance(grades: list, min_pass: int):
     Returns:
     str: "Pass" if the average grade is greater than or equal to min_pass, otherwise "Fail".
     """
-    pass
-
 def calculate_cumulative_performance(scores: dict):
     """
     Calculate the cumulative performance based on student scores.
@@ -93,7 +90,6 @@ def even_numbers(n: int):
     Returns:
     list: A list of even integers from 1 to n.
     """
-    pass
     return even_numbers
 
 def odd_numbers(n: int):
@@ -111,7 +107,6 @@ def odd_numbers(n: int):
     Returns:
     list: A list of odd integers from 1 to n.
     """
-    pass
     return odd_numbers
 def sum_multiples_of_num(num: int, length: int):
     """
@@ -145,7 +140,6 @@ def skip_num(n: int, length: int):
     Returns:
     list: A list of integers from 1 to length, excluding n.
     """
-    pass
     return num_list
 
 def break_test(n: int, length: int):
@@ -170,10 +164,10 @@ def break_test(n: int, length: int):
 def sum_numbers_until_zero(nums: list):
     total = 0
     for i in range(len(nums)):
-        if nums[i] != 0:
-            total += nums[i]
+        if nums[i] == 0:
+            break
         else:
-            continue
+            total += nums[i]
     """
     Calculate the sum of numbers in a list until a zero is encountered.
 
@@ -183,7 +177,6 @@ def sum_numbers_until_zero(nums: list):
     Returns:
     int: The sum of integers in the list up to (but not including) the first zero.
     """
-    pass
     return total
 
 def count_positive_numbers(nums: list):
@@ -200,7 +193,6 @@ def count_positive_numbers(nums: list):
     Returns:
     int: The count of positive integers in the list.
     """
-    pass
     return total
 
 def sum_dictionary_values(dictionary: dict):
@@ -244,7 +236,6 @@ def skip_divisible_by_num(n: int, length: int):
     Returns:
     list: A list of integers from 1 to length, excluding those divisible by n.
     """
-    pass
     return num_list
 
 """Learning Outcome: Processing Data"""
@@ -260,7 +251,6 @@ def square_numbers(nums: list):
     Returns:
     list: A list containing the squares of the input integers.
     """
-    pass
     return nums_list
 
 def transform_string(input: str, transform: str):
@@ -289,7 +279,6 @@ def sum_and_average(nums: list[int]):
     Returns:
     tuple: A tuple containing the sum and average of the numbers.
     """
-    pass
     return (sum(nums), (sum(nums)/len(nums)))
 
 def word_frequency_count(words: list[str]):
@@ -316,7 +305,6 @@ def filter_even_numbers(nums: list[int]):
     Returns:
     list: A list containing only the even integers from the input list.
     """
-    pass
     return nums_list
 
 """Learning Outcome: Simple Algorithms(Problem Solving)"""
@@ -346,7 +334,6 @@ def reverse_string(input: str):
     Returns:
     str: The reversed string.
     """
-    pass
     return input[::-1]
 
 def largest_number(nums: list[int]):
@@ -364,7 +351,6 @@ def largest_number(nums: list[int]):
     Returns:
     int or None: The largest number in the list, or None if the list is empty.
     """
-    pass
     return largest_number
 def is_prime(n: int):
     factors = []
@@ -384,7 +370,7 @@ def is_prime(n: int):
     Returns:
     bool: True if the number is prime, False otherwise.
     """
-    pass
+
 
 def count_character_occurrences(word_sentence: str, char_count: str):
 
@@ -404,5 +390,4 @@ def count_character_occurrences(word_sentence: str, char_count: str):
     Returns:
     int: The number of occurrences of the character in the sentence.
     """
-    pass
     return char_counter
