@@ -1,5 +1,11 @@
 """Learning Outcome: Functions"""
 def sum_of_squares(n: int):
+    if num <= 0:
+        raise ValueError("Number cannot be a negative integer")
+    sum = 0
+    for num in range (1, n + 1):
+        sum += num * num
+        return sum
     """
     Calculate the sum of the squares of all integers from 1 to n.
 
@@ -12,9 +18,21 @@ def sum_of_squares(n: int):
     Raises:
     ValueError: If n is a negative integer.
     """
+    
     pass
 
 def evaluate_performance(grades: list, min_pass: int):
+    min_pass = 75
+    grades = []
+
+    for grade in grades:
+        if grade >= min_pass:
+            return "Pass"
+        else:
+            return "Fail"
+        
+
+
     """
     Evaluate the performance based on a list of grades and a minimum passing grade.
 
@@ -28,6 +46,11 @@ def evaluate_performance(grades: list, min_pass: int):
     pass
 
 def calculate_cumulative_performance(scores: dict):
+    average = sum[scores]/ len[scores]
+
+
+
+
     """
     Calculate the cumulative performance based on student scores.
 
@@ -66,6 +89,12 @@ def rank_students(students: list[tuple[str, int]]):
 
 """Learning Outcome: Basic Loops"""
 def even_numbers(n: int):
+    evens = []
+    for num in range (1, n+1):
+        if num % 2 == 0:
+            evens.append(num)
+            return evens
+
     """
     Generate a list of even numbers from 1 to n.
 
@@ -78,6 +107,11 @@ def even_numbers(n: int):
     pass
 
 def odd_numbers(n: int):
+    odds= []
+    for num in range (1, n+1):
+        if num % 2 != 0:
+            odds.append(num)
+            return odds
     """
     Generate a list of odd numbers from 1 to n.
 
@@ -192,6 +226,11 @@ def skip_divisible_by_num(n: int, length: int):
 """Learning Outcome: Processing Data"""
 
 def square_numbers(nums: list):
+    nums = []
+    squared = []
+    for num in nums:
+        num = num * num
+        return squared.append(num)
     """
     Calculate the square of each number in a list.
 
@@ -204,6 +243,7 @@ def square_numbers(nums: list):
     pass
 
 def transform_string(input: str, transform: str):
+    
     """
     Transform a string based on the specified transformation type.
 
@@ -220,6 +260,10 @@ def transform_string(input: str, transform: str):
     pass
 
 def sum_and_average(nums: list[int]):
+    nums = []
+    sum_and_average(nums)
+    return sum_and_average
+
     """
     Calculate the sum and average of a list of numbers.
 
@@ -232,6 +276,11 @@ def sum_and_average(nums: list[int]):
     pass
 
 def word_frequency_count(words: list[str]):
+    words = []
+    word_count = 0
+
+    for w in words:
+        word_count += 1
     """
     Count the frequency of each word in a list.
 
@@ -244,6 +293,12 @@ def word_frequency_count(words: list[str]):
     pass
 
 def filter_even_numbers(nums: list[int]):
+    nums = []
+    even_integers = []
+    for num in nums:
+        if num % 2 == 0:
+            even_integers.append(num)
+            return even_integers
     """
     Filter out even numbers from a list.
 
@@ -258,6 +313,10 @@ def filter_even_numbers(nums: list[int]):
 """Learning Outcome: Simple Algorithms(Problem Solving)"""
 
 def find_median(nums: list[int]):
+    nums = []
+    median = sum(nums) / 2
+    return median
+
     """
     Find the median of a list of numbers.
 
@@ -273,6 +332,8 @@ def find_median(nums: list[int]):
     pass
 
 def reverse_string(input: str):
+    
+    return reverse_string[::-1]
     """
     Reverse the given string.
 
@@ -285,6 +346,8 @@ def reverse_string(input: str):
     pass
 
 def largest_number(nums: list[int]):
+    nums = []
+    
     """
     Find the largest number in a list.
 
@@ -297,6 +360,11 @@ def largest_number(nums: list[int]):
     pass
 
 def is_prime(n: int):
+    for num in range(n):
+        if num // num == 1 and num // 1 == num:
+            return True
+        else:
+            return False
     """
     Check if a number is prime.
 
@@ -309,6 +377,12 @@ def is_prime(n: int):
     pass
 
 def count_character_occurrences(word_sentence: str, char_count: str):
+    word_sentence = ""
+    char_count = 0
+
+    for char in word_sentence:
+        char_count += 1
+        return char_count
     """
     Count the occurrences of a character in a given sentence.
 
