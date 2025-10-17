@@ -12,7 +12,15 @@ def sum_of_squares(n: int):
     Raises:
     ValueError: If n is a negative integer.
     """
-    pass
+    if n < 0:
+        raise ValueError
+    
+    results = []
+    for i in range(n+1):
+        square_number = i ** 2
+        results.append(square_number)
+        
+    return sum(results)
 
 def evaluate_performance(grades: list, min_pass: int):
     """
@@ -25,7 +33,10 @@ def evaluate_performance(grades: list, min_pass: int):
     Returns:
     str: "Pass" if the average grade is greater than or equal to min_pass, otherwise "Fail".
     """
-    pass
+    if (sum(grades) / len(grades)) >= min_pass:
+        return "Pass"
+    else:
+        return "Fail"
 
 def calculate_cumulative_performance(scores: dict):
     """
@@ -37,7 +48,30 @@ def calculate_cumulative_performance(scores: dict):
     Returns:
     dict: A dictionary containing the average score and a list of subjects where the score is below average.
     """
-    pass
+    
+    results = []
+    subjects = []
+    
+    
+    for keys, values in scores.items():
+        results.append(values)
+        subjects.append(keys)
+    
+    average = sum(results) / len(results)
+    
+    
+    dict = {}
+    dict["average"] = f"{int(average):.2f}"
+    
+    for ave, sub in zip(results, subjects):
+        if ave < average:
+            if dict["below_average"]:
+                dict["below_average"].append(sub)
+            elif not dict["below_average"]:
+                dict["below_average"] = [sub]
+            
+    return dict
+print(calculate_cumulative_performance({"Math": 65, "English": 85, "Science": 50}))
 
 def analyze_improvement(scores: list):
     """
