@@ -102,7 +102,14 @@ def even_numbers(n: int):
     Returns:
     list: A list of even integers from 1 to n.
     """
-    pass
+    even_num_list = []
+
+    if n > 0:
+        for i in range(1, n + 1):
+            if i%2 == 0:
+                even_num_list.append(i)
+
+    return even_num_list
 
 def odd_numbers(n: int):
     """
@@ -114,7 +121,14 @@ def odd_numbers(n: int):
     Returns:
     list: A list of odd integers from 1 to n.
     """
-    pass
+    odd_num_list = []
+
+    if n > 0:
+        for i in range(1, n + 1):
+            if i%3 == 0:
+                odd_num_list.append(i)
+
+    return odd_num_list
 
 def sum_multiples_of_num(num: int, length: int):
     """
@@ -127,7 +141,19 @@ def sum_multiples_of_num(num: int, length: int):
     Returns:
     int: The sum of multiples of num from 1 to length.
     """
-    pass
+    multiples_list = []
+    sum = 0
+    count = 1
+    while len(multiples_list) < length:
+        
+        if count % num == 0:
+            multiples_list.append(count)
+        count += 1
+
+    for x in multiples_list:
+        sum += x
+
+    return sum
 
 def skip_num(n: int, length: int):
     """
@@ -140,7 +166,16 @@ def skip_num(n: int, length: int):
     Returns:
     list: A list of integers from 1 to length, excluding n.
     """
-    pass
+    my_list = []
+    count = 0
+
+    while count < length:
+        count += 1
+        if count == n:
+            continue
+        my_list.append(count)
+        
+    return my_list
 
 def break_test(n: int, length: int):
     """
@@ -153,7 +188,13 @@ def break_test(n: int, length: int):
     Returns:
     list: A list of integers from 1 to length, excluding n and stopping before it.
     """
-    pass
+    my_list = []
+    for i in range(1, length + 1):
+        if i == n:
+            break
+        my_list.append(i)
+    
+    return my_list
 
 def sum_numbers_until_zero(nums: list):
     """
@@ -165,7 +206,11 @@ def sum_numbers_until_zero(nums: list):
     Returns:
     int: The sum of integers in the list up to (but not including) the first zero.
     """
-    pass
+    sum = 0
+    for i in nums:
+        sum += i
+    
+    return sum
 
 def count_positive_numbers(nums: list):
     """
@@ -177,7 +222,12 @@ def count_positive_numbers(nums: list):
     Returns:
     int: The count of positive integers in the list.
     """
-    pass
+    count = 0
+    for i in nums:
+        if i > 0:
+            count += 1
+    
+    return count
 
 def sum_dictionary_values(dictionary: dict):
     """
@@ -189,7 +239,11 @@ def sum_dictionary_values(dictionary: dict):
     Returns:
     int: The sum of all values in the dictionary.
     """
-    pass
+    sum = 0
+    for x, y in dictionary.items():
+        sum += y
+    
+    return sum
 
 def sum_unique_elements(elements: list):
     """
@@ -201,7 +255,11 @@ def sum_unique_elements(elements: list):
     Returns:
     int: The sum of unique integers in the list.
     """
-    pass
+    sum = 0
+    for i in tuple(elements):
+        sum += i
+    
+    return sum
 
 def skip_divisible_by_num(n: int, length: int):
     """
@@ -214,7 +272,13 @@ def skip_divisible_by_num(n: int, length: int):
     Returns:
     list: A list of integers from 1 to length, excluding those divisible by n.
     """
-    pass
+    my_list = []
+    for i in range(1, length):
+        if i % n == 0:
+            continue
+        my_list.append(i)
+    
+    return my_list
 
 """Learning Outcome: Processing Data"""
 
@@ -228,7 +292,12 @@ def square_numbers(nums: list):
     Returns:
     list: A list containing the squares of the input integers.
     """
-    pass
+    my_list = []
+    for i in nums:
+        x = i**2
+        my_list.append(x)
+    
+    return my_list
 
 def transform_string(input: str, transform: str):
     """
@@ -256,7 +325,10 @@ def sum_and_average(nums: list[int]):
     Returns:
     tuple: A tuple containing the sum and average of the numbers.
     """
-    pass
+    total = sum(nums)
+    average = total/len(nums)
+
+    return (total, average)
 
 def word_frequency_count(words: list[str]):
     """
@@ -268,7 +340,12 @@ def word_frequency_count(words: list[str]):
     Returns:
     dict: A dictionary with words as keys and their frequencies as values.
     """
-    pass
+    my_dict = {}
+    for word in words:
+        count = words.count(word)
+        my_dict[word] = count
+    
+    return my_dict
 
 def filter_even_numbers(nums: list[int]):
     """
@@ -280,7 +357,7 @@ def filter_even_numbers(nums: list[int]):
     Returns:
     list: A list containing only the even integers from the input list.
     """
-    pass
+    my_list = []
 
 """Learning Outcome: Simple Algorithms(Problem Solving)"""
 
