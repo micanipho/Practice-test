@@ -1,4 +1,3 @@
-"""Learning Outcome: Functions"""
 def sum_of_squares(n: int):
     """
     Calculate the sum of the squares of all integers from 1 to n.
@@ -140,10 +139,9 @@ def sum_multiples_of_num(num: int, length: int):
     int: The sum of multiples of num from 1 to length.
     """
     lis = []
-    for i in range(num):
-        if num % i== 0:
-            lis.append(num)
-        return lis
+    for i in range(1,length+1):
+        lis.append(num * i)
+    return sum(lis)
 print(sum_multiples_of_num(9,2))
 
 def skip_num(n: int, length: int):
@@ -157,8 +155,12 @@ def skip_num(n: int, length: int):
     Returns:
     list: A list of integers from 1 to length, excluding n.
     """
-    pass
-
+    lis = []
+    for i in range(1,length+1):
+        if i != n:
+            print(lis.append(i))
+    return lis
+print(skip_num(2,5))
 def break_test(n: int, length: int):
     """
     Generate a list of numbers from 1 to length, stopping when a specific number is encountered.
@@ -170,8 +172,12 @@ def break_test(n: int, length: int):
     Returns:
     list: A list of integers from 1 to length, excluding n and stopping before it.
     """
-    pass
-
+    lis = []
+    for i in range(1,length):
+        if i <= n:
+            print(lis.append(i))
+    return lis
+print(break_test(3,6))
 def sum_numbers_until_zero(nums: list):
     """
     Calculate the sum of numbers in a list until a zero is encountered.
