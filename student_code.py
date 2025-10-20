@@ -2,6 +2,8 @@
 def sum_of_squares(n: int):
     if n < 0:
         raise ValueError
+    elif n == 0:
+        f = 0
     else:
         f = n * (n + 1) * (2 * n + 1)//6
     
@@ -25,7 +27,7 @@ def evaluate_performance(grades: list, min_pass: int):
     return 
 
 grades = [22, 54, 32, 17, 2, 20]
-min_pass = 30
+min_pass = 75
 print(evaluate_performance(grades,min_pass))
 
 # ==============================================================================
@@ -185,7 +187,7 @@ print(sum_numbers_until_zero(nums))
 
 
 # =================================================================================
-# Q2
+# Q11
 # =================================================================================
 
 def count_positive_numbers(nums: list):
@@ -221,16 +223,13 @@ print(sum_dictionary_values(dictionary))
 # =================================================================================
 
 def sum_unique_elements(elements: list):
-    """
-    Calculate the sum of unique elements in a list.
 
-    Parameters:
-    elements (list): A list of integers.
+    unique = set(elements)
+    a = sum(unique)
+    return a
 
-    Returns:
-    int: The sum of unique integers in the list.
-    """
-    pass
+elements = [1,2,3,1,2,4,5]
+print(sum_unique_elements(elements))
 
 # =================================================================================
 # Q2
@@ -255,17 +254,18 @@ print(skip_divisible_by_num(2, 10))
 # =================================================================================
 
 def square_numbers(nums: list):
-    """
-    Calculate the square of each number in a list.
 
-    Parameters:
-    nums (list): A list of integers.
+    list = []
 
-    Returns:
-    list: A list containing the squares of the input integers.
-    """
-    pass
+    for i in nums:
+        a = i*i
+        list.append(a)
 
+    return list
+
+nums = [1,2,3]
+
+print(square_numbers(nums))
 # =================================================================================
 # Q2
 # =================================================================================
@@ -291,16 +291,15 @@ def transform_string(input: str, transform: str):
 # =================================================================================
 
 def sum_and_average(nums: list[int]):
-    """
-    Calculate the sum and average of a list of numbers.
 
-    Parameters:
-    nums (list[int]): A list of integers.
+    a = sum(nums)
+    ave = a//len(nums)
 
-    Returns:
-    tuple: A tuple containing the sum and average of the numbers.
-    """
-    pass
+    return (a,ave)
+nums = [1,2,3,4,5]
+
+print(sum_and_average(nums))
+
 
 # =================================================================================
 # Q2

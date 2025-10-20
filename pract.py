@@ -49,17 +49,19 @@
     # return f
 
 
+def sum_of_squares(n: int):
+    if n < 0:
+        raise ValueError
+    else:
+        f = n * (n + 1) * (2 * n + 1)//6
+    
+    return f
+print(sum_of_squares(-5))
+    
+    
 
-def sum_and_average(nums: list[int]):
-    """
-    Calculate the sum and average of a list of numbers.
 
-    Parameters:
-    nums (list[int]): A list of integers.
 
-    Returns:
-    tuple: A tuple containing the sum and average of the numbers.
-    """
-    pass
+
 
     
