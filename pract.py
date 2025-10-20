@@ -48,33 +48,18 @@
     # f = x * n * (n + 1)//2
     # return f
 
-def sum_numbers_until_zero(nums: list):
+
+
+def sum_and_average(nums: list[int]):
     """
-    Calculate the sum of numbers in a list until a zero is encountered.
+    Calculate the sum and average of a list of numbers.
 
     Parameters:
-    nums (list): A list of integers.
+    nums (list[int]): A list of integers.
 
     Returns:
-    int: The sum of integers in the list up to (but not including) the first zero.
+    tuple: A tuple containing the sum and average of the numbers.
     """
     pass
 
-    list = []    
-
-    for i in nums:
-        if i == 0:
-            break
-        else:
-            list.append(i)
     
-    return sum(list)
-
-nums = [1, 2, 3, 4, 0, 5, 6, 7]
-        
-print(sum_numbers_until_zero(nums))
-
-
-
-
-

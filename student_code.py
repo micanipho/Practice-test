@@ -189,32 +189,32 @@ print(sum_numbers_until_zero(nums))
 # =================================================================================
 
 def count_positive_numbers(nums: list):
-    """
-    Count the number of positive integers in a list.
+    count = 0
 
-    Parameters:
-    nums (list): A list of integers.
+    for i in nums:
+        if i >= 0:
+            count += 1
+    return count
 
-    Returns:
-    int: The count of positive integers in the list.
-    """
-    pass
+nums = [1,2,0,-1,-2, 4,]
+
+print(count_positive_numbers(nums))
 
 # =================================================================================
 # Q2
 # =================================================================================
 
 def sum_dictionary_values(dictionary: dict):
-    """
-    Calculate the sum of all values in a dictionary.
 
-    Parameters:
-    dictionary (dict): A dictionary with numeric values.
+    summ = 0
+    for value in dictionary.values():
+        summ += value
 
-    Returns:
-    int: The sum of all values in the dictionary.
-    """
-    pass
+    return summ
+
+dictionary = {1: 4, 2: 3, 3: 2}
+
+print(sum_dictionary_values(dictionary))
 
 # =================================================================================
 # Q2
@@ -237,19 +237,18 @@ def sum_unique_elements(elements: list):
 # =================================================================================
 
 def skip_divisible_by_num(n: int, length: int):
-    """
-    Generate a list of numbers from 1 to length, skipping those that are divisible by a specific number.
+    
+    list = []
 
-    Parameters:
-    n (int): The number to skip multiples of.
-    length (int): The upper limit for generating numbers.
+    for i in range(1, length):
+        if i%n==0:
+            continue
+        else:
+            list.append(i)
+    
+    return list
 
-    Returns:
-    list: A list of integers from 1 to length, excluding those divisible by n.
-    """
-    pass
-
-"""Learning Outcome: Processing Data"""
+print(skip_divisible_by_num(2, 10))
 
 # =================================================================================
 # Q2
@@ -324,99 +323,90 @@ def word_frequency_count(words: list[str]):
 # =================================================================================
 
 def filter_even_numbers(nums: list[int]):
-    """
-    Filter out even numbers from a list.
 
-    Parameters:
-    nums (list[int]): A list of integers.
+    list = []
 
-    Returns:
-    list: A list containing only the even integers from the input list.
-    """
-    pass
+    for i in nums:
+        if i%2==0:
+            list.append(i)
+    return list
+    
+nums = [1,2,3,4,5,6,7,8,9,10,11]
 
-"""Learning Outcome: Simple Algorithms(Problem Solving)"""
+print(filter_even_numbers(nums))
 
 # =================================================================================
 # Q2
 # =================================================================================
 
 def find_median(nums: list[int]):
-    """
-    Find the median of a list of numbers.
 
-    Parameters:
-    nums (list[int]): A list of integers.
+    if nums == []:
+            raise ValueError 
 
-    Returns:
-    float: The median value of the list.
-
-    Raises:
-    ValueError: If the list is empty.
-    """
-    pass
+    for i in nums:
+        if i%2==0:
+            pass #do something
+        else:
+            return sum(nums)/len(nums)
+        
+nums = []
+nums.sort()        
+print(find_median(nums))
 
 # =================================================================================
 # Q2
 # =================================================================================
 
 def reverse_string(input: str):
-    """
-    Reverse the given string.
+    string = input
+    reversed_string = input[::-1]
 
-    Parameters:
-    input (str): The string to be reversed.
+    return reversed_string
 
-    Returns:
-    str: The reversed string.
-    """
-    pass
+print(reverse_string("love"))
 
 # =================================================================================
 # Q2
 # =================================================================================
 
 def largest_number(nums: list[int]):
-    """
-    Find the largest number in a list.
 
-    Parameters:
-    nums (list[int]): A list of integers.
+    for i in nums:
+        i = max(nums)
+    return i
 
-    Returns:
-    int or None: The largest number in the list, or None if the list is empty.
-    """
-    pass
+nums = [1,3,6,2]
 
+print(largest_number(nums))
 # =================================================================================
 # Q2
 # =================================================================================
 
 def is_prime(n: int):
-    """
-    Check if a number is prime.
 
-    Parameters:
-    n (int): The number to check.
-
-    Returns:
-    bool: True if the number is prime, False otherwise.
-    """
-    pass
+    if n%2 != 0:
+        return True
+    else:
+        return False
+    
+print(is_prime(3))
 
 # =================================================================================
 # Q2
 # =================================================================================
 
 def count_character_occurrences(word_sentence: str, char_count: str):
-    """
-    Count the occurrences of a character in a given sentence.
 
-    Parameters:
-    word_sentence (str): The sentence in which to count occurrences.
-    char_count (str): The character to count.
+    count = 0
 
-    Returns:
-    int: The number of occurrences of the character in the sentence.
-    """
-    pass
+    for i in word_sentence:
+        if i == char_count:
+            count +=1
+
+    return count
+
+word_sentence = "wethinkcode"
+char_count = "e"
+
+print(count_character_occurrences(word_sentence, char_count))
