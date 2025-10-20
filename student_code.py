@@ -358,6 +358,11 @@ def filter_even_numbers(nums: list[int]):
     list: A list containing only the even integers from the input list.
     """
     my_list = []
+    for num in nums:
+        if num % 2 == 0:
+            my_list.append(num)
+    
+    return my_list
 
 """Learning Outcome: Simple Algorithms(Problem Solving)"""
 
@@ -374,7 +379,18 @@ def find_median(nums: list[int]):
     Raises:
     ValueError: If the list is empty.
     """
-    pass
+    if not nums:
+        raise ValueError("Your list is empty")
+    nums.sort()
+    n = len(nums)
+    if n % 2== 0:
+        md1 = nums[n//2 - 1]
+        md2 = nums[n//2]
+        median = (md1 + md2)/2
+        return median
+    if n % 2 != 0:
+        median = nums[n//2]
+        return median
 
 def reverse_string(input: str):
     """
@@ -386,7 +402,7 @@ def reverse_string(input: str):
     Returns:
     str: The reversed string.
     """
-    pass
+    return input[::-1]
 
 def largest_number(nums: list[int]):
     """
@@ -398,7 +414,12 @@ def largest_number(nums: list[int]):
     Returns:
     int or None: The largest number in the list, or None if the list is empty.
     """
-    pass
+    max_num = 0
+    for num in nums:
+        if max_num < num:
+            max_num = num
+    
+    return max_num
 
 def is_prime(n: int):
     """
@@ -410,8 +431,12 @@ def is_prime(n: int):
     Returns:
     bool: True if the number is prime, False otherwise.
     """
-    pass
-
+    for i in range(2, n):
+        if n % i != 0:
+            return True
+        else:
+            return False
+            
 def count_character_occurrences(word_sentence: str, char_count: str):
     """
     Count the occurrences of a character in a given sentence.
@@ -423,4 +448,9 @@ def count_character_occurrences(word_sentence: str, char_count: str):
     Returns:
     int: The number of occurrences of the character in the sentence.
     """
-    pass
+    count = 0
+    for i in word_sentence:
+        if char_count == i:
+            count += 1
+    
+    return count
