@@ -95,7 +95,7 @@ class SimpleDataProcessing(unittest.TestCase):
 class InputTransformation(unittest.TestCase):
     def test_transform_string(self):
         text = 'hello, world'
-        transform = ['Uppercase', 'Capitalize', 'Lowercase']
+        transform = ['uppercase', 'capitalize', 'lowercase']
         self.assertEqual(transform_string(text, transform[0]), 'HELLO, WORLD', "Uppercase transformation test failed.")
         self.assertEqual(transform_string(text, transform[1]), 'Hello, world', "Capitalize transformation test failed.")
         self.assertEqual(transform_string(text, transform[2]), text, "Lowercase transformation test failed.")
