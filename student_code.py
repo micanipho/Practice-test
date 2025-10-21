@@ -12,10 +12,14 @@ def sum_of_squares(n: int):
     Raises:
     ValueError: If n is a negative integer.
     """
-    for n in range(1, n + 1):
-        sum = (n ** 2) 
-    print(sum)
-print(sum_of_squares(3))
+    total = 0
+    if n < 0: 
+        raise ValueError
+    else:
+        for i in range(1, n + 1):
+            total+= (i** 2) 
+        return print(total)
+print(sum_of_squares(100))
 
 
 def evaluate_performance(grades: list, min_pass: int):
@@ -32,9 +36,10 @@ def evaluate_performance(grades: list, min_pass: int):
     grades =[80, 70, 90]
     min_grade_passing = 75
 
+    total = 0 
     for num in grades:
-        grade += num 
-    average = grade // len(grades)
+        total += num 
+    average = total // len(grades)
 
     if average < min_grade_passing: 
         print("Fail")
@@ -51,11 +56,22 @@ def calculate_cumulative_performance(scores: dict):
     Returns:
     dict: A dictionary containing the average score and a list of subjects where the score is below average.
     """
-    scores = {"Math": 65, "English": 85, "Science": 50}
+
+    if not scores:
+        return{"average": 0,"below average": []}
+    
+   
+    total = sum(scores.values()) 
+
+    dictionary_length = len(scores)
+    average = round(total / dictionary_length, 2)
+    below_average = [subject for subject, score in scores.items() if score < average]
+
+    return {"average": average, "below average": below_average}
+
+  
 
     
-    
-
 def analyze_improvement(scores: list):
     """
     Analyze the improvement trend based on a list of scores.
@@ -67,7 +83,21 @@ def analyze_improvement(scores: list):
     dict: A dictionary containing the trend of improvement ("positive", "negative", or "neutral") 
           and a boolean indicating whether there has been an improvement.
     """
-    pass
+    improved = bool
+    trend = ""
+    for i in range (1, len(scores)):
+        current_score = [i]
+        previous_score = [i -1]
+
+    if current_score > previous_score:
+        trend += "positive" and improved == True
+    else:
+        if current_score < previous_score:
+            trend += "negative" and improved == False 
+
+    improvements ={"trend":f"{trend}", "improvement":f"{improved}" }
+
+    return print(improvements)
 
 def rank_students(students: list[tuple[str, int]]):
     """
