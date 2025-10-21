@@ -12,6 +12,8 @@ def sum_of_squares(n: int):
     Raises:
     ValueError: If n is a negative integer.
     """
+    n >= 0
+    return sum(n ** 2)
     pass
 
 def evaluate_performance(grades: list, min_pass: int):
@@ -25,6 +27,15 @@ def evaluate_performance(grades: list, min_pass: int):
     Returns:
     str: "Pass" if the average grade is greater than or equal to min_pass, otherwise "Fail".
     """
+    grades = []
+
+    for grade in grades:
+        if grade >= min_pass:
+            return "Pass"
+        
+        if grade < min_pass:
+            return "Fail"
+        
     pass
 
 def calculate_cumulative_performance(scores: dict):
@@ -37,6 +48,9 @@ def calculate_cumulative_performance(scores: dict):
     Returns:
     dict: A dictionary containing the average score and a list of subjects where the score is below average.
     """
+    scores = {}
+
+    return scores
     pass
 
 def analyze_improvement(scores: list):
@@ -62,6 +76,8 @@ def rank_students(students: list[tuple[str, int]]):
     Returns:
     list: A sorted list of tuples in descending order based on scores.
     """
+
+    
     pass
 
 """Learning Outcome: Basic Loops"""
@@ -75,6 +91,12 @@ def even_numbers(n: int):
     Returns:
     list: A list of even integers from 1 to n.
     """
+    numbers = []
+    for num in range(1, 25):
+        if num % 2 == 0:
+            numbers.append(num)
+
+    return numbers
     pass
 
 def odd_numbers(n: int):
@@ -87,6 +109,13 @@ def odd_numbers(n: int):
     Returns:
     list: A list of odd integers from 1 to n.
     """
+    numbers = []
+
+    for num in range(1, 25):
+        if num % 2 != 0:
+            numbers.append(num)
+
+    return numbers
     pass
 
 def sum_multiples_of_num(num: int, length: int):
@@ -100,6 +129,7 @@ def sum_multiples_of_num(num: int, length: int):
     Returns:
     int: The sum of multiples of num from 1 to length.
     """
+
     pass
 
 def skip_num(n: int, length: int):
@@ -138,6 +168,14 @@ def sum_numbers_until_zero(nums: list):
     Returns:
     int: The sum of integers in the list up to (but not including) the first zero.
     """
+    nums = []
+
+    for num in nums:
+        if num != 0:
+            nums.append(sum(nums))
+    
+    return nums
+
     pass
 
 def count_positive_numbers(nums: list):
@@ -187,6 +225,14 @@ def skip_divisible_by_num(n: int, length: int):
     Returns:
     list: A list of integers from 1 to length, excluding those divisible by n.
     """
+    numbers = []
+
+    for num in range(1, 25):
+        if num % 3 != 0:
+            numbers.append(num)
+
+    return numbers
+
     pass
 
 """Learning Outcome: Processing Data"""
@@ -282,6 +328,8 @@ def reverse_string(input: str):
     Returns:
     str: The reversed string.
     """
+
+    return input[::-1]
     pass
 
 def largest_number(nums: list[int]):
@@ -294,6 +342,10 @@ def largest_number(nums: list[int]):
     Returns:
     int or None: The largest number in the list, or None if the list is empty.
     """
+    nums = []
+
+    for num in nums:
+        return max(num)
     pass
 
 def is_prime(n: int):
@@ -320,3 +372,7 @@ def count_character_occurrences(word_sentence: str, char_count: str):
     int: The number of occurrences of the character in the sentence.
     """
     pass
+
+
+print(skip_divisible_by_num(25, 6))
+
