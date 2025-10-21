@@ -59,7 +59,8 @@ def calculate_cumulative_performance(scores: dict):
 
     for subjects in scores:
         if scores[subjects] < average:
-            outcome["below_average"]. 
+            outcome["below_average"]
+ 
 
 
 
