@@ -1,31 +1,38 @@
 """Learning Outcome: Functions"""
 def sum_of_squares(n: int):
-    """
-    Calculate the sum of the squares of all integers from 1 to n.
+    if n < 0:
+        raise ValueError
+    elif n == 0:
+        f = 0
+    else:
+        f = n * (n + 1) * (2 * n + 1)//6
+    
+    return f
+print(sum_of_squares(1))
 
-    Parameters:
-    n (int): A non-negative integer up to which the squares will be summed.
-
-    Returns:
-    int: The sum of the squares of all integers from 1 to n.
-
-    Raises:
-    ValueError: If n is a negative integer.
-    """
-    pass
+# ==============================================================================
+# Q1
+# ==============================================================================
+    
 
 def evaluate_performance(grades: list, min_pass: int):
-    """
-    Evaluate the performance based on a list of grades and a minimum passing grade.
+    ave = sum(grades)//len(grades)
+    
 
-    Parameters:
-    grades (list): A list of integers representing student grades.
-    min_pass (int): The minimum average grade required to pass.
+    for i in grades:
+        if ave >= min_pass:
+            return "Pass"
+        else: 
+            return "Fail"
+    return 
 
-    Returns:
-    str: "Pass" if the average grade is greater than or equal to min_pass, otherwise "Fail".
-    """
-    pass
+grades = [22, 54, 32, 17, 2, 20]
+min_pass = 75
+print(evaluate_performance(grades,min_pass))
+
+# ==============================================================================
+# Q2
+# ==============================================================================
 
 def calculate_cumulative_performance(scores: dict):
     """
@@ -38,6 +45,10 @@ def calculate_cumulative_performance(scores: dict):
     dict: A dictionary containing the average score and a list of subjects where the score is below average.
     """
     pass
+
+# =================================================================================
+# Q3
+# =================================================================================
 
 def analyze_improvement(scores: list):
     """
@@ -52,6 +63,12 @@ def analyze_improvement(scores: list):
     """
     pass
 
+
+# =================================================================================
+# Q4
+# =================================================================================
+
+
 def rank_students(students: list[tuple[str, int]]):
     """
     Rank students based on their scores.
@@ -64,30 +81,39 @@ def rank_students(students: list[tuple[str, int]]):
     """
     pass
 
+# =================================================================================
+# Q5
+# =================================================================================
+
 """Learning Outcome: Basic Loops"""
 def even_numbers(n: int):
-    """
-    Generate a list of even numbers from 1 to n.
 
-    Parameters:
-    n (int): The upper limit for generating even numbers.
+    even_list = []
+    for x in range(n + 1):
+        if x%2 == 0:
+            even_list.append(x)
+    return even_list
 
-    Returns:
-    list: A list of even integers from 1 to n.
-    """
-    pass
+even_numbers(10)
+
+
+# =================================================================================
+# Q6
+# =================================================================================
 
 def odd_numbers(n: int):
-    """
-    Generate a list of odd numbers from 1 to n.
+      
+    odd_list = []
+    for x in range(n + 1):
+        if x%2 != 0:
+            odd_list.append(x)
+    return odd_list
 
-    Parameters:
-    n (int): The upper limit for generating odd numbers.
+odd_numbers(10)
 
-    Returns:
-    list: A list of odd integers from 1 to n.
-    """
-    pass
+# =================================================================================
+# Q7
+# =================================================================================
 
 def sum_multiples_of_num(num: int, length: int):
     """
@@ -102,106 +128,147 @@ def sum_multiples_of_num(num: int, length: int):
     """
     pass
 
+# =================================================================================
+# Q8
+# =================================================================================
+
 def skip_num(n: int, length: int):
-    """
-    Generate a list of numbers from 1 to length, skipping a specific number.
 
-    Parameters:
-    n (int): The number to skip.
-    length (int): The upper limit for generating numbers.
+    list = []
 
-    Returns:
-    list: A list of integers from 1 to length, excluding n.
-    """
-    pass
+    for x in range(length + 1):
+        if x == n:
+            continue
+        list.append(x)
+        
+    return list
+
+print(skip_num(2, 10))
+
+
+
+# =================================================================================
+# Q9
+# =================================================================================
 
 def break_test(n: int, length: int):
-    """
-    Generate a list of numbers from 1 to length, stopping when a specific number is encountered.
 
-    Parameters:
-    n (int): The number at which to stop adding to the list.
-    length (int): The upper limit for generating numbers.
+    list = []
 
-    Returns:
-    list: A list of integers from 1 to length, excluding n and stopping before it.
-    """
-    pass
+    for x in range(length + 1):
+        list.append(x)
+        if x == n:
+            break
+        
+    return list
+
+print(skip_num(2, 10))
+
+# =================================================================================
+# Q10
+# =================================================================================
 
 def sum_numbers_until_zero(nums: list):
-    """
-    Calculate the sum of numbers in a list until a zero is encountered.
+    
+    list = []    
 
-    Parameters:
-    nums (list): A list of integers.
+    for i in nums:
+        if i == 0:
+            break
+        else:
+            list.append(i)
+    
+    return sum(list)
 
-    Returns:
-    int: The sum of integers in the list up to (but not including) the first zero.
-    """
-    pass
+nums = [1, 2, 3, 4, 0, 5, 6, 7]
+        
+print(sum_numbers_until_zero(nums))
+
+
+
+# =================================================================================
+# Q11
+# =================================================================================
 
 def count_positive_numbers(nums: list):
-    """
-    Count the number of positive integers in a list.
+    count = 0
 
-    Parameters:
-    nums (list): A list of integers.
+    for i in nums:
+        if i >= 0:
+            count += 1
+    return count
 
-    Returns:
-    int: The count of positive integers in the list.
-    """
-    pass
+nums = [1,2,0,-1,-2, 4,]
+
+print(count_positive_numbers(nums))
+
+# =================================================================================
+# Q2
+# =================================================================================
 
 def sum_dictionary_values(dictionary: dict):
-    """
-    Calculate the sum of all values in a dictionary.
 
-    Parameters:
-    dictionary (dict): A dictionary with numeric values.
+    summ = 0
+    for value in dictionary.values():
+        summ += value
 
-    Returns:
-    int: The sum of all values in the dictionary.
-    """
-    pass
+    return summ
+
+dictionary = {1: 4, 2: 3, 3: 2}
+
+print(sum_dictionary_values(dictionary))
+
+# =================================================================================
+# Q2
+# =================================================================================
 
 def sum_unique_elements(elements: list):
-    """
-    Calculate the sum of unique elements in a list.
 
-    Parameters:
-    elements (list): A list of integers.
+    unique = set(elements)
+    a = sum(unique)
+    return a
 
-    Returns:
-    int: The sum of unique integers in the list.
-    """
-    pass
+elements = [1,2,3,1,2,4,5]
+print(sum_unique_elements(elements))
+
+# =================================================================================
+# Q2
+# =================================================================================
 
 def skip_divisible_by_num(n: int, length: int):
-    """
-    Generate a list of numbers from 1 to length, skipping those that are divisible by a specific number.
+    
+    list = []
 
-    Parameters:
-    n (int): The number to skip multiples of.
-    length (int): The upper limit for generating numbers.
+    for i in range(1, length):
+        if i%n==0:
+            continue
+        else:
+            list.append(i)
+    
+    return list
 
-    Returns:
-    list: A list of integers from 1 to length, excluding those divisible by n.
-    """
-    pass
+print(skip_divisible_by_num(2, 10))
 
-"""Learning Outcome: Processing Data"""
+# =================================================================================
+# Q2
+# =================================================================================
 
 def square_numbers(nums: list):
-    """
-    Calculate the square of each number in a list.
 
-    Parameters:
-    nums (list): A list of integers.
+    list = []
 
-    Returns:
-    list: A list containing the squares of the input integers.
-    """
-    pass
+    for i in nums:
+        a = i*i
+        list.append(a)
+
+    return list
+
+nums = [1,2,3]
+
+print(square_numbers(nums))
+# =================================================================================
+# Q2
+# =================================================================================
 
 def transform_string(input: str, transform: str):
     """
@@ -219,17 +286,24 @@ def transform_string(input: str, transform: str):
     """
     pass
 
+# =================================================================================
+# Q2
+# =================================================================================
+
 def sum_and_average(nums: list[int]):
-    """
-    Calculate the sum and average of a list of numbers.
 
-    Parameters:
-    nums (list[int]): A list of integers.
+    a = sum(nums)
+    ave = a//len(nums)
 
-    Returns:
-    tuple: A tuple containing the sum and average of the numbers.
-    """
-    pass
+    return (a,ave)
+nums = [1,2,3,4,5]
+
+print(sum_and_average(nums))
+
+
+# =================================================================================
+# Q2
+# =================================================================================
 
 def word_frequency_count(words: list[str]):
     """
@@ -243,80 +317,95 @@ def word_frequency_count(words: list[str]):
     """
     pass
 
+# =================================================================================
+# Q2
+# =================================================================================
+
 def filter_even_numbers(nums: list[int]):
-    """
-    Filter out even numbers from a list.
 
-    Parameters:
-    nums (list[int]): A list of integers.
+    list = []
 
-    Returns:
-    list: A list containing only the even integers from the input list.
-    """
-    pass
+    for i in nums:
+        if i%2==0:
+            list.append(i)
+    return list
+    
+nums = [1,2,3,4,5,6,7,8,9,10,11]
 
-"""Learning Outcome: Simple Algorithms(Problem Solving)"""
+print(filter_even_numbers(nums))
+
+# =================================================================================
+# Q2
+# =================================================================================
 
 def find_median(nums: list[int]):
-    """
-    Find the median of a list of numbers.
 
-    Parameters:
-    nums (list[int]): A list of integers.
+    if nums == []:
+            raise ValueError 
 
-    Returns:
-    float: The median value of the list.
+    for i in nums:
+        if i%2==0:
+            pass #do something
+        else:
+            return sum(nums)/len(nums)
+        
+nums = []
+nums.sort()        
+print(find_median(nums))
 
-    Raises:
-    ValueError: If the list is empty.
-    """
-    pass
+# =================================================================================
+# Q2
+# =================================================================================
 
 def reverse_string(input: str):
-    """
-    Reverse the given string.
+    string = input
+    reversed_string = input[::-1]
 
-    Parameters:
-    input (str): The string to be reversed.
+    return reversed_string
 
-    Returns:
-    str: The reversed string.
-    """
-    pass
+print(reverse_string("love"))
+
+# =================================================================================
+# Q2
+# =================================================================================
 
 def largest_number(nums: list[int]):
-    """
-    Find the largest number in a list.
 
-    Parameters:
-    nums (list[int]): A list of integers.
+    for i in nums:
+        i = max(nums)
+    return i
 
-    Returns:
-    int or None: The largest number in the list, or None if the list is empty.
-    """
-    pass
+nums = [1,3,6,2]
+
+print(largest_number(nums))
+# =================================================================================
+# Q2
+# =================================================================================
 
 def is_prime(n: int):
-    """
-    Check if a number is prime.
 
-    Parameters:
-    n (int): The number to check.
+    if n%2 != 0:
+        return True
+    else:
+        return False
+    
+print(is_prime(3))
 
-    Returns:
-    bool: True if the number is prime, False otherwise.
-    """
-    pass
+# =================================================================================
+# Q2
+# =================================================================================
 
 def count_character_occurrences(word_sentence: str, char_count: str):
-    """
-    Count the occurrences of a character in a given sentence.
 
-    Parameters:
-    word_sentence (str): The sentence in which to count occurrences.
-    char_count (str): The character to count.
+    count = 0
 
-    Returns:
-    int: The number of occurrences of the character in the sentence.
-    """
-    pass
+    for i in word_sentence:
+        if i == char_count:
+            count +=1
+
+    return count
+
+word_sentence = "wethinkcode"
+char_count = "e"
+
+print(count_character_occurrences(word_sentence, char_count))
