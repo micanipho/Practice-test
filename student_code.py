@@ -1,3 +1,5 @@
+import math
+import statistics
 def sum_of_squares(n: int):
     """
     Calculate the sum of the squares of all integers from 1 to n.
@@ -17,7 +19,7 @@ def sum_of_squares(n: int):
         sumnum.append(i)
     return (sum(sumnum))
 
-sum_of_squares(5)
+# sum_of_squares(5)
 def evaluate_performance(grades: list, min_pass: int):
     """
     Evaluate the performance based on a list of grades and a minimum passing grade.
@@ -35,7 +37,7 @@ def evaluate_performance(grades: list, min_pass: int):
             return f"{i} Pass"
         else:
             return f"{i} Fail"
-print(evaluate_performance([100, 70, 90, 75, 65], 75))
+# print(evaluate_performance([100, 70, 90, 75, 65], 75))
 
 def calculate_cumulative_performance(scores: dict):
     """
@@ -51,7 +53,7 @@ def calculate_cumulative_performance(scores: dict):
     for i in scores.values():
         lis.append(i)
         return sum(lis)/len(lis)
-print(calculate_cumulative_performance({"Math": 65, "English": 85, "Science": 50}))   
+# print(calculate_cumulative_performance({"Math": 65, "English": 85, "Science": 50}))   
 
 def analyze_improvement(scores: list):
     """
@@ -109,7 +111,7 @@ def even_numbers(n: int):
         if i % 2 == 0:
             even.append(i)
     return even
-print(even_numbers(10))
+# print(even_numbers(10))
 
 def odd_numbers(n: int):
     """
@@ -126,7 +128,7 @@ def odd_numbers(n: int):
         if i % 2 != 0:
             odd.append(i)
     return odd
-print(odd_numbers(10))
+# print(odd_numbers(10))
 def sum_multiples_of_num(num: int, length: int):
     """
     Calculate the sum of multiples of a given number up to a specified length.
@@ -142,7 +144,7 @@ def sum_multiples_of_num(num: int, length: int):
     for i in range(1,length+1):
         lis.append(num * i)
     return sum(lis)
-print(sum_multiples_of_num(9,2))
+# print(sum_multiples_of_num(9,2))
 
 def skip_num(n: int, length: int):
     """
@@ -160,7 +162,7 @@ def skip_num(n: int, length: int):
         if i != n:
             print(lis.append(i))
     return lis
-print(skip_num(2,5))
+# print(skip_num(2,5))
 def break_test(n: int, length: int):
     """
     Generate a list of numbers from 1 to length, stopping when a specific number is encountered.
@@ -177,7 +179,7 @@ def break_test(n: int, length: int):
         if i <= n:
             print(lis.append(i))
     return lis
-print(break_test(3,6))
+# print(break_test(3,6))
 def sum_numbers_until_zero(nums: list):
     """
     Calculate the sum of numbers in a list until a zero is encountered.
@@ -200,7 +202,12 @@ def count_positive_numbers(nums: list):
     Returns:
     int: The count of positive integers in the list.
     """
-    pass
+    count = 0
+    for num in nums:
+        if num > 0:
+            count += 1
+    print(count)
+# print(count_positive_numbers([-1,2,3,-9,-10,3]))
 
 def sum_dictionary_values(dictionary: dict):
     """
@@ -212,7 +219,11 @@ def sum_dictionary_values(dictionary: dict):
     Returns:
     int: The sum of all values in the dictionary.
     """
-    pass
+    lis = []
+    for value in dictionary.values():
+        lis.append(value)
+    print(sum(lis))
+# print(sum_dictionary_values( {'a': 1, 'b': 2, 'c': 3})) 
 
 def sum_unique_elements(elements: list):
     """
@@ -224,8 +235,12 @@ def sum_unique_elements(elements: list):
     Returns:
     int: The sum of unique integers in the list.
     """
-    pass
-
+    lis = []
+    for element in elements:
+        if element not in lis:
+            lis.append(element)
+    print(sum(lis))
+# sum_unique_elements([1,1,1,2,4,5,4])
 def skip_divisible_by_num(n: int, length: int):
     """
     Generate a list of numbers from 1 to length, skipping those that are divisible by a specific number.
@@ -251,8 +266,11 @@ def square_numbers(nums: list):
     Returns:
     list: A list containing the squares of the input integers.
     """
-    pass
-
+    lis = []
+    for num in nums:
+        lis.append(num ** 2)
+    print(lis)
+#print(square_numbers([2,3,5,7,9]))
 def transform_string(input: str, transform: str):
     """
     Transform a string based on the specified transformation type.
@@ -279,7 +297,8 @@ def sum_and_average(nums: list[int]):
     Returns:
     tuple: A tuple containing the sum and average of the numbers.
     """
-    pass
+    sum_list = sum(nums)
+    average = statistics.average()
 
 def word_frequency_count(words: list[str]):
     """
@@ -291,7 +310,15 @@ def word_frequency_count(words: list[str]):
     Returns:
     dict: A dictionary with words as keys and their frequencies as values.
     """
-    pass
+    lis = {}
+    for word in words:
+        if word in lis:
+            lis[word] += 1
+        else:
+            lis[word] = 1
+    print(lis)
+        
+# print(word_frequency_count(["hello", "hello", "hey","sho"]))
 
 def filter_even_numbers(nums: list[int]):
     """
@@ -303,9 +330,13 @@ def filter_even_numbers(nums: list[int]):
     Returns:
     list: A list containing only the even integers from the input list.
     """
-    pass
+    even = []
+    for num in nums:
+        if num % 2 == 0:
+            even.append(num)
+    print(even)
+#print(filter_even_numbers([2,5,7,9,8,10,12,24]))
 
-"""Learning Outcome: Simple Algorithms(Problem Solving)"""
 
 def find_median(nums: list[int]):
     """
@@ -320,8 +351,9 @@ def find_median(nums: list[int]):
     Raises:
     ValueError: If the list is empty.
     """
-    pass
-
+    median = statistics.median(nums)
+    print(median)
+# print(find_median([1,2,3,5]))
 def reverse_string(input: str):
     """
     Reverse the given string.
@@ -332,7 +364,8 @@ def reverse_string(input: str):
     Returns:
     str: The reversed string.
     """
-    pass
+    return input[::-1]
+# print(reverse_string("hello"))
 
 def largest_number(nums: list[int]):
     """
@@ -344,7 +377,11 @@ def largest_number(nums: list[int]):
     Returns:
     int or None: The largest number in the list, or None if the list is empty.
     """
-    pass
+    largest = max(nums)
+    if not nums:
+        return None#stuck here
+    print(largest)
+#print(largest_number([1,20,19]))
 
 def is_prime(n: int):
     """
@@ -356,8 +393,16 @@ def is_prime(n: int):
     Returns:
     bool: True if the number is prime, False otherwise.
     """
-    pass
-
+    if n < 2:
+        return False
+    if n == 2:
+        return True
+    for i in range(3, int(math.sqrt(n)) + 1, 2):
+        if n % i == 0:
+            return False
+    return True
+    
+# print(is_prime(71))
 def count_character_occurrences(word_sentence: str, char_count: str):
     """
     Count the occurrences of a character in a given sentence.
@@ -369,4 +414,9 @@ def count_character_occurrences(word_sentence: str, char_count: str):
     Returns:
     int: The number of occurrences of the character in the sentence.
     """
-    pass
+    count = 0
+    for word in word_sentence.lower():
+        if word == char_count:
+            count += 1
+    return print(count)
+# print(count_character_occurrences("My name is Ashly", "a"))
