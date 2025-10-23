@@ -1,22 +1,15 @@
-def sum_numbers_until_zero(nums: list):
+def rank_students(students: list[tuple[str, int]]):
 
     """
-    Calculate the sum of numbers in a list until a zero is encountered.
+    Rank students based on their scores.
 
     Parameters:
-    nums (list): A list of integers.
+    students (list): A list of tuples where each tuple contains a student's name and their score.
 
     Returns:
-    int: The sum of integers in the list up to (but not including) the first zero.
+    list: A sorted list of tuples in descending order based on scores.
     """
 
-    total = 0
-    for i in range(len(nums)):
-        if nums[i] == 0:
-            break
-        else:
-            total += nums[i]
-    return total
+    return sorted(students)
 
-print(sum_numbers_until_zero([1, 2, 3, 0]))
-
+print(rank_students([("Alice", 85), ("Bob", 70), ("Charlie", 90)]))

@@ -53,13 +53,20 @@ def calculate_cumulative_performance(scores: dict):
         "average": 0,
         "below_average": []
     }
-    average = sum_dictionary_values(scores) / len(scores)
+
+    average = 0
+    for value in scores:
+        average += scores[value]
+
+    average = round(average / len(scores), 2)
 
     outcome["average"] = average
 
     for subjects in scores:
         if scores[subjects] < average:
-            outcome["below_average"]
+            outcome["below_average"].append(subjects)
+
+    return outcome
  
 
 
@@ -75,7 +82,6 @@ def analyze_improvement(scores: list):
     dict: A dictionary containing the trend of improvement ("positive", "negative", or "neutral") 
           and a boolean indicating whether there has been an improvement.
     """
-    pass
 
 def rank_students(students: list[tuple[str, int]]):
 
@@ -88,7 +94,8 @@ def rank_students(students: list[tuple[str, int]]):
     Returns:
     list: A sorted list of tuples in descending order based on scores.
     """
-    pass
+
+    return sorted(students)
 
 """Learning Outcome: Basic Loops"""
 def even_numbers(n: int):
