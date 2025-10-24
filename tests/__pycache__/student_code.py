@@ -1,4 +1,5 @@
 """Learning Outcome: Functions"""
+import statistics
 def sum_of_squares(n: int):
     """
     Calculate the sum of the squares of all integers from 1 to n.
@@ -11,10 +12,17 @@ def sum_of_squares(n: int):
 
     Raises:
     ValueError: If n is a negative integer.
+
     """
-    pass
+    if n < 0:
+        return ValueError
+    total = 0
+    for i in range(n):
+        total += i ** 2
+    return total
 
 def evaluate_performance(grades: list, min_pass: int):
+    
     """
     Evaluate the performance based on a list of grades and a minimum passing grade.
 
@@ -25,8 +33,12 @@ def evaluate_performance(grades: list, min_pass: int):
     Returns:
     str: "Pass" if the average grade is greater than or equal to min_pass, otherwise "Fail".
     """
-    pass
 
+    for grade in grades:
+        if grade >= min_pass:
+            return "Pass" 
+        else:
+            return "False"
 def calculate_cumulative_performance(scores: dict):
     """
     Calculate the cumulative performance based on student scores.
@@ -37,7 +49,27 @@ def calculate_cumulative_performance(scores: dict):
     Returns:
     dict: A dictionary containing the average score and a list of subjects where the score is below average.
     """
-    pass
+    outcome = {
+        "average": 0,
+        "below_average": []
+    }
+
+    average = 0
+    for value in scores:
+        average += scores[value]
+
+    average = round(average / len(scores), 2)
+
+    outcome["average"] = average
+
+    for subjects in scores:
+        if scores[subjects] < average:
+            outcome["below_average"].append(subjects)
+
+    return outcome
+ 
+
+
 
 def analyze_improvement(scores: list):
     """
@@ -50,9 +82,25 @@ def analyze_improvement(scores: list):
     dict: A dictionary containing the trend of improvement ("positive", "negative", or "neutral") 
           and a boolean indicating whether there has been an improvement.
     """
-    pass
+    outcome = {
+        "trend": "",
+        "improved": False
+    }
+
+    if scores[-1] > scores[0]:
+        outcome["trend"] = "positive"
+        outcome["improved"] = True
+    elif scores[-1] < scores[0]:
+        outcome["trend"] = "negative"
+        outcome["improved"] = False
+    else:
+        outcome["trend"] = "neutral"
+        outcome["improved"] = False
+
+    return outcome
 
 def rank_students(students: list[tuple[str, int]]):
+
     """
     Rank students based on their scores.
 
@@ -62,7 +110,8 @@ def rank_students(students: list[tuple[str, int]]):
     Returns:
     list: A sorted list of tuples in descending order based on scores.
     """
-    pass
+
+    return sorted(students[1])
 
 """Learning Outcome: Basic Loops"""
 def even_numbers(n: int):
@@ -75,9 +124,18 @@ def even_numbers(n: int):
     Returns:
     list: A list of even integers from 1 to n.
     """
-    pass
+    even_numbers = []
+    for i in range(1, n+1):
+        if i % 2 == 0:
+            even_numbers.append(i)
+    return even_numbers
 
 def odd_numbers(n: int):
+
+    odd_numbers =  []
+    for i in range(n):
+        if i % 2 != 0:
+            odd_numbers.append(i)
     """
     Generate a list of odd numbers from 1 to n.
 
@@ -87,8 +145,7 @@ def odd_numbers(n: int):
     Returns:
     list: A list of odd integers from 1 to n.
     """
-    pass
-
+    return odd_numbers
 def sum_multiples_of_num(num: int, length: int):
     """
     Calculate the sum of multiples of a given number up to a specified length.
@@ -97,12 +154,18 @@ def sum_multiples_of_num(num: int, length: int):
     num (int): The number whose multiples are to be summed.
     length (int): The upper limit for the range of multiples.
 
-    Returns:
+    Returns:below_average
     int: The sum of multiples of num from 1 to length.
     """
-    pass
+    total = 0
+    counter = 1
+    while counter <= length:
+        total += counter * num
+        counter += 1
+    return total
 
 def skip_num(n: int, length: int):
+
     """
     Generate a list of numbers from 1 to length, skipping a specific number.
 
@@ -113,9 +176,18 @@ def skip_num(n: int, length: int):
     Returns:
     list: A list of integers from 1 to length, excluding n.
     """
-    pass
+
+    num_list = []
+    for i in range(1, length + 1):
+        if i == n:
+            continue
+        else:
+            num_list.append(i)
+
+    return num_list
 
 def break_test(n: int, length: int):
+
     """
     Generate a list of numbers from 1 to length, stopping when a specific number is encountered.
 
@@ -126,9 +198,17 @@ def break_test(n: int, length: int):
     Returns:
     list: A list of integers from 1 to length, excluding n and stopping before it.
     """
-    pass
+
+    num_list = []
+    for i in range(1, length):
+        if i == n:
+            break
+        else:
+            num_list.append(i)
+    return num_list
 
 def sum_numbers_until_zero(nums: list):
+
     """
     Calculate the sum of numbers in a list until a zero is encountered.
 
@@ -138,9 +218,17 @@ def sum_numbers_until_zero(nums: list):
     Returns:
     int: The sum of integers in the list up to (but not including) the first zero.
     """
-    pass
+
+    total = 0
+    for i in range(len(nums)):
+        if nums[i] == 0:
+            break
+        else:
+            total += nums[i]
+    return total
 
 def count_positive_numbers(nums: list):
+
     """
     Count the number of positive integers in a list.
 
@@ -150,7 +238,12 @@ def count_positive_numbers(nums: list):
     Returns:
     int: The count of positive integers in the list.
     """
-    pass
+    
+    total = 0
+    for i in range(len(nums)):
+        if nums[i] > 0:
+            total += 1
+    return total
 
 def sum_dictionary_values(dictionary: dict):
     """
@@ -162,9 +255,15 @@ def sum_dictionary_values(dictionary: dict):
     Returns:
     int: The sum of all values in the dictionary.
     """
-    pass
+    total = 0
+    for value in dictionary:
+        total += dictionary[value]
+
+    return total
+
 
 def sum_unique_elements(elements: list):
+
     """
     Calculate the sum of unique elements in a list.
 
@@ -174,9 +273,22 @@ def sum_unique_elements(elements: list):
     Returns:
     int: The sum of unique integers in the list.
     """
-    pass
+
+    unique_elements = []
+    for number in elements:
+        if number not in unique_elements:
+            unique_elements.append(number)
+
+    return sum(unique_elements)
+        
 
 def skip_divisible_by_num(n: int, length: int):
+    num_list = []
+    for i in range(length):
+        if i % n == 0:
+            continue
+        else:
+            num_list.append(i)
     """
     Generate a list of numbers from 1 to length, skipping those that are divisible by a specific number.
 
@@ -187,11 +299,12 @@ def skip_divisible_by_num(n: int, length: int):
     Returns:
     list: A list of integers from 1 to length, excluding those divisible by n.
     """
-    pass
+    return num_list
 
 """Learning Outcome: Processing Data"""
 
 def square_numbers(nums: list):
+    nums_list = [num * num for num in nums]
     """
     Calculate the square of each number in a list.
 
@@ -201,15 +314,27 @@ def square_numbers(nums: list):
     Returns:
     list: A list containing the squares of the input integers.
     """
-    pass
+    return nums_list
 
 def transform_string(input: str, transform: str):
+
+    if transform.lower() == 'capitalize':
+        return input.capitalize()
+    
+    elif transform.lower() == "upper":
+        return input.upper()
+    
+    elif transform.lower() == "lower":
+        return input.lower()
+    
+    else:
+        raise ValueError
     """
     Transform a string based on the specified transformation type.
 
     Parameters:
     input (str): The string to be transformed.
-    transform (str): The type of transformation ('capitalize', 'upper', 'lower').
+    transform (str):     passThe type of transformation ('capitalize', 'upper', 'lower').
 
     Returns:
     str: The transformed string.
@@ -217,8 +342,6 @@ def transform_string(input: str, transform: str):
     Raises:
     ValueError: If the transformation type is unknown.
     """
-    pass
-
 def sum_and_average(nums: list[int]):
     """
     Calculate the sum and average of a list of numbers.
@@ -229,9 +352,10 @@ def sum_and_average(nums: list[int]):
     Returns:
     tuple: A tuple containing the sum and average of the numbers.
     """
-    pass
+    return (sum(nums), (sum(nums)/len(nums)))
 
 def word_frequency_count(words: list[str]):
+
     """
     Count the frequency of each word in a list.
 
@@ -241,9 +365,19 @@ def word_frequency_count(words: list[str]):
     Returns:
     dict: A dictionary with words as keys and their frequencies as values.
     """
-    pass
+    word_count = {}
+
+    for word in words:
+        if word in word_count:
+            word_count[word] += 1
+        else:
+            word_count[word] = 1
+    return word_count
+
 
 def filter_even_numbers(nums: list[int]):
+
+    nums_list = [num for num in nums if num % 2 == 0]
     """
     Filter out even numbers from a list.
 
@@ -253,11 +387,13 @@ def filter_even_numbers(nums: list[int]):
     Returns:
     list: A list containing only the even integers from the input list.
     """
-    pass
+    return nums_list
 
 """Learning Outcome: Simple Algorithms(Problem Solving)"""
 
 def find_median(nums: list[int]):
+
+    return statistics.median(nums)
     """
     Find the median of a list of numbers.
 
@@ -271,7 +407,6 @@ def find_median(nums: list[int]):
     ValueError: If the list is empty.
     """
     pass
-
 def reverse_string(input: str):
     """
     Reverse the given string.
@@ -282,9 +417,14 @@ def reverse_string(input: str):
     Returns:
     str: The reversed string.
     """
-    pass
+    return input[::-1]
 
 def largest_number(nums: list[int]):
+    if len(nums) == 0:
+        return None
+    else:
+        nums = sorted(nums)
+        largest_number = nums[-1]
     """
     Find the largest number in a list.
 
@@ -294,9 +434,16 @@ def largest_number(nums: list[int]):
     Returns:
     int or None: The largest number in the list, or None if the list is empty.
     """
-    pass
-
+    return largest_number
 def is_prime(n: int):
+    factors = []
+    for i in range(1, n+1):
+        if n % i == 0:
+            factors.append(i)
+    if len(factors) == 2:
+        return True
+    else:
+        return False
     """
     Check if a number is prime.
 
@@ -306,9 +453,15 @@ def is_prime(n: int):
     Returns:
     bool: True if the number is prime, False otherwise.
     """
-    pass
+
 
 def count_character_occurrences(word_sentence: str, char_count: str):
+
+    char_counter = 0
+
+    for el in word_sentence:
+        if el == char_count:
+            char_counter += 1
     """
     Count the occurrences of a character in a given sentence.
 
@@ -319,4 +472,4 @@ def count_character_occurrences(word_sentence: str, char_count: str):
     Returns:
     int: The number of occurrences of the character in the sentence.
     """
-    pass
+    return char_counter
