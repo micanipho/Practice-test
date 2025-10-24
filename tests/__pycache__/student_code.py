@@ -82,6 +82,22 @@ def analyze_improvement(scores: list):
     dict: A dictionary containing the trend of improvement ("positive", "negative", or "neutral") 
           and a boolean indicating whether there has been an improvement.
     """
+    outcome = {
+        "trend": "",
+        "improved": False
+    }
+
+    if scores[-1] > scores[0]:
+        outcome["trend"] = "positive"
+        outcome["improved"] = True
+    elif scores[-1] < scores[0]:
+        outcome["trend"] = "negative"
+        outcome["improved"] = False
+    else:
+        outcome["trend"] = "neutral"
+        outcome["improved"] = False
+
+    return outcome
 
 def rank_students(students: list[tuple[str, int]]):
 
@@ -95,7 +111,7 @@ def rank_students(students: list[tuple[str, int]]):
     list: A sorted list of tuples in descending order based on scores.
     """
 
-    return sorted(students)
+    return sorted(students[1])
 
 """Learning Outcome: Basic Loops"""
 def even_numbers(n: int):
@@ -141,6 +157,12 @@ def sum_multiples_of_num(num: int, length: int):
     Returns:below_average
     int: The sum of multiples of num from 1 to length.
     """
+    total = 0
+    counter = 1
+    while counter <= length:
+        total += counter * num
+        counter += 1
+    return total
 
 def skip_num(n: int, length: int):
 
